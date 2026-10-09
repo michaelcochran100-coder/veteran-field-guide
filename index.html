@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A phone-friendly guide for veterans on landing contract work: playbook, agency directory, scam warnings, hidden resources and a tracker.">
+<meta name="theme-color" content="#1F2A44">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Field Guide">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Contract Work Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: phone-first single column, sticky header, fixed bottom tab bar, each tab a panel of drop-down cards. */
+:root{
+  --bg:#F3F4F7; --surface:#FFFFFF; --surface-2:#E9ECF2; --fg:#1C2130; --muted:#5B6373; --line:#D6DAE3;
+  --navy:#1F2A44; --navy-ink:#FFFFFF; --red:#A6192E; --red-soft:#FBEEF0; --navy-soft:#E8ECF5;
+  --good:#237A49; --good-soft:#E6F4EB; --warn:#9A5B00; --warn-soft:#FBF1DC; --navy-text:#1F2A44;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --radius:12px; --shadow:0 1px 2px rgba(20,26,40,.06),0 4px 14px rgba(20,26,40,.06);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12151D; --surface:#1B1F2A; --surface-2:#242937; --fg:#ECEEF3; --muted:#A3AAB8; --line:#303646;
+  --navy:#2A3756; --navy-ink:#FFFFFF; --red:#D7435A; --red-soft:#3A1F26; --navy-soft:#232C44;
+  --good:#5CC284; --good-soft:#1C3127; --warn:#E3A94A; --warn-soft:#3A2E17; --navy-text:#C9D3F0; --shadow:0 1px 2px rgba(0,0,0,.4);
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#12151D; --surface:#1B1F2A; --surface-2:#242937; --fg:#ECEEF3; --muted:#A3AAB8; --line:#303646;
+  --navy:#2A3756; --navy-ink:#FFFFFF; --red:#D7435A; --red-soft:#3A1F26; --navy-soft:#232C44;
+  --good:#5CC284; --good-soft:#1C3127; --warn:#E3A94A; --warn-soft:#3A2E17; --navy-text:#C9D3F0; --shadow:0 1px 2px rgba(0,0,0,.4);
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--red)}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05;letter-spacing:.01em}
+h2{font-size:1.9rem;font-weight:800}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:14px calc(96px + env(safe-area-inset-bottom,0px))}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--navy-ink);box-shadow:var(--shadow)}
+.top .in{max-width:720px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.mark{width:34px;height:34px;border-radius:8px;background:var(--red);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.1rem;flex:none}
+.top h1{font-size:1.35rem;font-weight:800;line-height:1}
+.top .sub{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;font-family:var(--display);font-weight:600}
+
+/* tab bar */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabs .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
+.tab{appearance:none;background:none;border:0;padding:8px 2px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);font:600 .68rem/1 var(--body);cursor:pointer;min-width:0}
+.tab svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tab[aria-selected="true"]{color:var(--red)}
+.tab:focus-visible{outline:2px solid var(--red);outline-offset:-2px;border-radius:8px}
+
+/* panels */
+.panel{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card .body{padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.hero{background:var(--navy);color:var(--navy-ink);border:0}
+.hero .body{padding:22px 18px 20px;gap:12px}
+.hero h2{font-size:clamp(1.9rem,8vw,2.6rem);line-height:.95}
+.hero p{opacity:.92}
+.hero .eyebrow{color:#F0A6B2}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center}
+.stat b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:800;color:var(--navy-text)}
+.stat span{font-size:.72rem;color:var(--muted);line-height:1.25;display:block}
+
+/* drop-downs */
+details.dd{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+details.dd>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:1.25rem;font-weight:700;line-height:1.1}
+details.dd>summary::-webkit-details-marker{display:none}
+details.dd>summary .n{flex:none;width:30px;height:30px;border-radius:8px;background:var(--navy-soft);color:var(--navy-text);display:grid;place-items:center;font-size:.95rem;font-weight:800}
+details.dd>summary .n.r{background:var(--red-soft);color:var(--red)}
+details.dd>summary .n.g{background:var(--good-soft);color:var(--good)}
+details.dd>summary .n.w{background:var(--warn-soft);color:var(--warn)}
+details.dd>summary .t{flex:1;min-width:0}
+details.dd>summary .t small{display:block;font-family:var(--body);font-weight:400;font-size:.82rem;color:var(--muted);margin-top:2px;line-height:1.3}
+details.dd>summary .chev{flex:none;width:22px;height:22px;stroke:var(--muted);fill:none;stroke-width:2;transition:transform .2s}
+details.dd[open]>summary .chev{transform:rotate(180deg)}
+details.dd>summary:focus-visible{outline:2px solid var(--red);outline-offset:-2px;border-radius:var(--radius)}
+details.dd>.body{padding:0 16px 16px;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+@media (prefers-reduced-motion:reduce){details.dd>summary .chev{transition:none}}
+
+ul.clean{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+ul.clean li{padding-left:20px;position:relative}
+ul.clean li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--red);transform:rotate(45deg)}
+ul.check li::before{content:"✓";background:none;transform:none;top:0;left:0;color:var(--good);font-weight:700;width:auto;height:auto}
+ul.x li::before{content:"✕";background:none;transform:none;top:0;left:0;color:var(--red);font-weight:700;width:auto;height:auto}
+.note{background:var(--navy-soft);border-left:4px solid var(--navy);padding:10px 12px;border-radius:8px}
+.note.red{background:var(--red-soft);border-left-color:var(--red)}
+.note.good{background:var(--good-soft);border-left-color:var(--good)}
+.note.warn{background:var(--warn-soft);border-left-color:var(--warn)}
+.note b{font-family:var(--display);font-size:1.05rem;font-weight:700;display:block;margin-bottom:2px}
+.term{display:grid;grid-template-columns:110px 1fr;gap:8px 12px;font-size:.95rem}
+.term dt{font-weight:600;color:var(--red)}
+.term dd{margin:0}
+.pc{display:flex;flex-direction:column;gap:10px}
+.pc .row{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pc .con,.pc .pro{padding:10px 12px}
+.pc .con{background:var(--red-soft)}
+.pc .pro{background:var(--good-soft)}
+.pc .con b{color:var(--red)} .pc .pro b{color:var(--good)}
+.pc .con b,.pc .pro b{display:block;font-family:var(--display);font-size:1.05rem;margin-bottom:2px}
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:1.2rem;font-weight:800}
+.steps li:nth-child(even)::before{background:var(--red)}
+.steps b{display:block;font-family:var(--display);font-size:1.15rem;font-weight:700}
+.script{background:var(--surface-2);border-radius:10px;padding:12px 14px;font-style:italic;display:flex;flex-direction:column;gap:8px}
+.qs{display:flex;flex-direction:column;gap:6px}
+.qs label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.qs input{margin-top:4px;accent-color:var(--red);width:18px;height:18px;flex:none}
+
+/* agencies */
+.toolbar{display:flex;flex-direction:column;gap:8px}
+.search{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);font:inherit}
+.search:focus{outline:2px solid var(--red);outline-offset:0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:6px 11px;font:500 .82rem var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip:focus-visible{outline:2px solid var(--red);outline-offset:1px}
+.ag{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.ag>summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.ag>summary::-webkit-details-marker{display:none}
+.ag .nm{font-family:var(--display);font-size:1.3rem;font-weight:700;line-height:1;flex:1;min-width:0}
+.ag .nm small{display:block;font-family:var(--body);font-size:.78rem;font-weight:500;color:var(--muted);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}
+.ag .chev{flex:none;width:22px;height:22px;stroke:var(--muted);fill:none;stroke-width:2;transition:transform .2s}
+.ag[open]>summary .chev{transform:rotate(180deg)}
+.ag>summary:focus-visible{outline:2px solid var(--red);outline-offset:-2px;border-radius:var(--radius)}
+.ag .body{padding:0 14px 14px;border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.kv{display:grid;grid-template-columns:96px 1fr;gap:6px 10px;font-size:.95rem}
+.kv dt{color:var(--red);font-weight:600;font-size:.85rem;padding-top:2px}
+.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 13px;border-radius:9px;text-decoration:none;font:600 .9rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.btn.p{background:var(--red);border-color:var(--red);color:#fff}
+.btn.n{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.copy{appearance:none;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);border-radius:6px;padding:2px 8px;font:600 .75rem var(--body);cursor:pointer;margin-left:6px;vertical-align:middle}
+.how{background:var(--navy-soft);border-radius:8px;padding:8px 10px;font-size:.93rem}
+.how b{color:var(--navy-text)}
+.empty{text-align:center;color:var(--muted);padding:20px}
+.first{border:2px solid var(--red)}
+.first .body{gap:8px}
+.first ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.first ol b{font-weight:600}
+
+/* gems */
+.gem{display:flex;flex-direction:column;gap:3px;padding:10px 0;border-top:1px solid var(--line)}
+.gem:first-of-type{border-top:0;padding-top:0}
+.gem b{font-weight:600}
+.gem .lk{font-size:.9rem}
+
+/* tracker */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.form label{display:flex;flex-direction:column;gap:3px;font-size:.78rem;font-weight:600;color:var(--muted);min-width:0}
+.form input,.form select{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);font:inherit;font-size:.95rem}
+.form input:focus,.form select:focus{outline:2px solid var(--red);outline-offset:0}
+.form .full{grid-column:1/-1}
+.apps{display:flex;flex-direction:column;gap:8px}
+.app{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:start}
+.app .t{font-weight:600}
+.app .m{font-size:.85rem;color:var(--muted);grid-column:1}
+.app .st{font:600 .72rem var(--body);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--surface-2);white-space:nowrap}
+.app .st.i{background:var(--good-soft);color:var(--good)}
+.app .st.o{background:var(--warn-soft);color:var(--warn)}
+.app .st.d{background:var(--red-soft);color:var(--red)}
+.app .st.w{background:var(--navy-soft);color:var(--navy-text)}
+.app .st.f{background:var(--good);color:#fff}
+.app .del{appearance:none;border:0;background:none;color:var(--muted);font-size:.8rem;cursor:pointer;grid-column:2;justify-self:end;padding:2px 4px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--navy);color:#fff;padding:8px 14px;border-radius:999px;font-size:.85rem;z-index:40;box-shadow:var(--shadow)}
+.week{display:flex;flex-direction:column;gap:6px}
+.week label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:.95rem}
+.week input{margin-top:4px;accent-color:var(--red);width:18px;height:18px;flex:none}
+.ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.inst{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:560px){.inst{grid-template-columns:1fr 1fr}}
+.inst .card .body{gap:6px}
+.inst h4{font-family:var(--display);font-size:1.15rem;font-weight:700}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <div class="mark" aria-hidden="true">CW</div>
+    <div>
+      <h1>Contract Work Field Guide</h1>
+      <div class="sub">For veterans who need work now</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ START ============ -->
+<section class="panel" id="p-start" role="tabpanel">
+  <div class="card hero">
+    <div class="body">
+      <div class="eyebrow">Veteran job resource</div>
+      <h2>Contract jobs are the fastest legit door into a good company.</h2>
+      <p>This guide covers what most people learn the hard way: why contract roles move faster, how to spot a fake recruiter, which agencies to call, and the places almost nobody looks. Read it once, then work it like a mission.</p>
+      <div class="stats">
+        <div class="stat"><b>Fast</b><span>hire, often in 2 to 3 weeks</span></div>
+        <div class="stat"><b>High</b><span>odds of an interview</span></div>
+        <div class="stat"><b>Higher</b><span>hourly pay than most perm roles</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card first">
+    <div class="body">
+      <div class="eyebrow">New here? Do these first</div>
+      <ol>
+        <li><b>Read the Warnings tab</b> before you answer any recruiter. Five minutes. It keeps you from getting scammed.</li>
+        <li><b>Open Playbook</b> and do step 1 today: resume to two pages, civilian words, saved on your phone.</li>
+        <li><b>Pick three agencies</b> in the Agencies tab that match your field. Make an account on each board.</li>
+        <li><b>Sign up with Hire Heroes USA</b> (Gems tab). A free coach, and the fastest way to the free LinkedIn Premium year.</li>
+        <li><b>Log every application</b> in Tracker. Call every recruiter the same day you apply.</li>
+      </ol>
+      <p class="small muted">Then come back to Start and read the four drop-downs below when you have twenty minutes.</p>
+    </div>
+  </div>
+
+  <details class="dd" open>
+    <summary><span class="n">1</span><span class="t">Why contract work<small>The odds and why they favor you</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <p>A contract job is a real job at a real company. The difference is who signs your paycheck. You work on site or remote for the client, say an aerospace plant or a distribution center, but you're on the payroll of a staffing agency the client pays to find people.</p>
+      <p>Big companies do this all the time. When a team needs help fast, finance approves a contract seat long before it approves a permanent one. The agency gets the job order and has days, not months, to fill it. That urgency is your advantage.</p>
+      <div class="stats" style="grid-template-columns:1fr 1fr">
+        <div class="stat"><b>400–700</b><span>applications in one day on a company's own permanent posting</span></div>
+        <div class="stat"><b>2–4</b><span>applications in a week on an agency's contract posting</span></div>
+      </div>
+      <p class="small muted">Numbers from real job searches, not a study. Your field and city will differ. The gap is the point.</p>
+      <div class="note"><b>The bottom line</b>Most people ignore recruiter messages because they're scared of scams, or they bail after one call with an overseas recruiter. Answer the phone, send your resume fast, and follow through, and you're ahead of almost everyone in line.</div>
+    </div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">2</span><span class="t">Know before you apply<small>Four things that trip up almost everyone</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <div><b>Your recruiter may be overseas. That's normal.</b><p>Many US staffing firms run recruiting teams offshore to cut costs. Don't hang up on a real opportunity because of an accent or a time zone. Judge the job and the company, not the voice.</p></div>
+      <div><b>Verify the recruiter before you hand over anything.</b><p>A real recruiter writes from the agency's own domain, like name@roberthalf.com, not Gmail or Outlook. Look them up on LinkedIn and on the agency site. The Warnings tab has the full checklist.</p></div>
+      <div><b>The recruiter needs you as much as you need them.</b><p>Recruiters get paid when you get placed. You don't have to impress them. Be polite, answer fast, and be straight about what you want and what you'll accept.</p></div>
+      <div><b>Send your resume fast. Minutes matter.</b><p>The client gives the agency a few interview slots, and several agencies chase the same job. Once the slots fill, nobody else gets submitted. Keep a current Word and PDF copy on your phone so you can send it within the hour.</p></div>
+    </div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">3</span><span class="t">Cons and pros<small>The honest trade-offs, side by side</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body pc">
+      <div class="row"><div class="con"><b>No PTO or sick leave</b>Take a day off and you don't get paid for it. Plan appointments around your schedule or ask for a shift swap.</div><div class="pro"><b>Higher hourly pay</b>Contract rates usually run above the same job on staff, partly to cover the benefits you're not getting. Some agencies also offer health and 401(k) plans to W-2 contractors. Ask.</div></div>
+      <div class="row"><div class="con"><b>No guarantee of an extension</b>Six months may really mean six months. Keep your resume current and stay in touch with your recruiter the whole time.</div><div class="pro"><b>A shot at a Fortune 500 company</b>A big name on your resume opens doors you couldn't get through before. One good contract changes how every future recruiter sees you.</div></div>
+      <div class="row"><div class="con"><b>Thin benefits, or none</b>If you don't have VA health care, look into enrolling before you start. It covers the biggest gap contract work leaves.</div><div class="pro"><b>You can test-drive the company</b>Working a contract at a place like RTX, Boeing or NASA tells you what it's really like. Leaving at the end of a six-month contract looks far better on a resume than quitting a perm job at month six.</div></div>
+      <div class="row"><div class="con"><b>No paid holidays</b>Off on a holiday? No pay that day. Working one? Usually regular pay, no premium.</div><div class="pro"><b>More schedule flexibility</b>You can often ask for a schedule change from day one if the team's workload allows. Tell your recruiter and your onsite lead. Best for one-offs, like shifting hours around a VA appointment.</div></div>
+      <div class="row"><div class="con"><b>You have to give notice to leave</b>Most agencies want notice before you quit. Find out how much before you sign. Skip it and the agency can contest your unemployment or mark you not eligible for rehire, and some contracts carry a fee. Run the agreement through an AI tool before signing so you catch what tired eyes miss.</div><div class="pro"><b>A recruiter in your corner for years</b>Finish a contract in good standing and that agency knows you. Five years from now, if a job goes bad, you call them. They move faster for people they've already placed.</div></div>
+      <div class="row"><div class="con"><b>You won't hear the company's plans until late</b>Expect to learn about a perm offer or an extension only 1 to 2 months before the contract ends. Budgets run by quarter. The team asks, finance approves. Your boss can't control that timeline no matter how much they like you.</div><div class="pro"><b>Much better odds of getting hired</b>Contract postings draw a fraction of the applicants a company's own ads do, and many of those drop out after the first recruiter call. You won't.</div></div>
+    </div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">4</span><span class="t">Learn the lingo<small>Sound like you've done this before</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <dl class="term">
+        <dt>W-2 contract</dt><dd>You're an employee of the agency. Taxes withheld, employer pays its share of Social Security, and you can usually draw unemployment between contracts. <b>This is what you want.</b></dd>
+        <dt>1099</dt><dd>Self-employed. No taxes withheld, and you pay both halves of Social Security (about 15.3%). Only take 1099 if the rate covers that gap.</dd>
+        <dt>C2C</dt><dd>Corp-to-corp. The agency pays your own company, not you. Only makes sense if you already run an LLC. Most veterans starting out should skip these.</dd>
+        <dt>RTR</dt><dd>Right to represent. Says this one agency can submit you for this one job. <b>Never sign two RTRs for the same job.</b> Two agencies submitting you looks bad and the client may toss you out.</dd>
+        <dt>Req number</dt><dd>The job order number. Write it down. It's how you track which agency has you on which job.</dd>
+        <dt>Contract-to-hire</dt><dd>You start as a contractor with the goal of a permanent hire, often after 3 to 6 months. A goal, not a promise.</dd>
+        <dt>Pay vs. bill rate</dt><dd>Pay rate is what you get. Bill rate is what the client pays the agency. The gap is the agency's margin. You only negotiate pay rate.</dd>
+        <dt>MSP / VMS</dt><dd>Managed service provider / vendor management system. Large companies route contract hiring through one system and only approved agencies can submit. That's why some jobs are only reachable through an agency.</dd>
+        <dt>Non-exempt</dt><dd>Hourly and eligible for overtime. Most contract roles are non-exempt, so ask what the overtime rate is.</dd>
+        <dt>ATS</dt><dd>Applicant tracking system. The software that reads your resume before a human does. Use the exact words from the posting (job title, systems, certs) so it scores you high.</dd>
+        <dt>Submittal</dt><dd>When the agency sends your resume to the client. Most clients block a second submittal of the same person for 6 to 12 months, so make sure the first one is a good fit.</dd>
+        <dt>Conversion fee</dt><dd>What the client pays the agency to hire you permanently. One reason a perm offer can take a while. Not your cost.</dd>
+      </dl>
+    </div>
+  </details>
+
+  <details class="dd" id="install">
+    <summary><span class="n r">↓</span><span class="t">Save this guide to your phone<small>Two taps. Works like an app, no download.</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <div class="inst">
+        <div class="card"><div class="body"><h4>iPhone (Safari)</h4><ol class="ol small"><li>Open this link in <b>Safari</b>.</li><li>Tap the <b>Share</b> button (the square with the arrow at the bottom).</li><li>Scroll down and tap <b>Add to Home Screen</b>.</li><li>Tap <b>Add</b>. The guide now sits on your home screen like an app.</li></ol></div></div>
+        <div class="card"><div class="body"><h4>Android (Chrome)</h4><ol class="ol small"><li>Open this link in <b>Chrome</b>.</li><li>Tap the <b>three dots</b> in the top right.</li><li>Tap <b>Add to Home screen</b> (or <b>Install app</b>).</li><li>Tap <b>Add</b>. Done.</li></ol></div></div>
+      </div>
+      <p class="small">If the link opened inside your texting app, tap the menu and choose <b>Open in Safari</b> or <b>Open in Chrome</b> first. The Add to Home Screen option only shows in the real browser.</p>
+      <p class="small muted">Your tracker and checklists save on this phone only. Nobody else can see them.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ PLAYBOOK ============ -->
+<section class="panel" id="p-play" role="tabpanel" hidden>
+  <div><div class="eyebrow">Section 2</div><h2>The Playbook</h2><p class="muted">Step by step, from first click to first paycheck. Work several agencies at once. Keep each job with one agency.</p></div>
+
+  <details class="dd" open>
+    <summary><span class="n">1</span><span class="t">The eight steps<small>Do them in this order</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <ol class="steps">
+        <li><div><b>Get your resume mission-ready.</b>Two pages max. Put the civilian job title you want right under your name. Civilian words, not military ones: "managed $1.2M in parts orders," not "S-4 supply NCOIC." Numbers on every bullet: dollars, headcount, aircraft, pallets. Mirror the words in the posting so the ATS scores you. Save a Word copy and a PDF on your phone. Free help: Hire Heroes USA will rewrite it with you (Gems tab).</div></li>
+        <li><div><b>Find the posting on the agency's board.</b>Search the agency sites in the Agencies tab for your job title plus "contract." Also search LinkedIn and Indeed, then confirm the poster is an agency. Apply within 48 hours of a posting going up. Anything older than two weeks is probably filled.</div></li>
+        <li><div><b>Apply, then call.</b>Apply online first so you're in their system. Then call the recruiter or the branch the same day. Use the phone script below. Voicemail? Leave your name, the job title, the req number and that your resume is in their inbox. Then email it with the subject line "Req # · Job title · Your name."</div></li>
+        <li><div><b>Sign the RTR for that one job.</b>Read it. It should name the client or job and the pay rate. One agency per job, period.</div></li>
+        <li><div><b>Interview with the client.</b>Usually a 30-minute phone or video call with the hiring manager. For contract roles they want two things: can you start soon, and can you do the job without hand-holding. Have three short stories ready that prove it. Ask your recruiter what the manager cares about most. They often know. Close with "What does the plan look like after the contract term?"</div></li>
+        <li><div><b>Get the offer in writing.</b>Pay rate, overtime rate, start date, length, location and schedule. Ask the questions below before you say yes.</div></li>
+        <li><div><b>Knock out onboarding fast.</b>Background check, drug screen, I-9 and direct deposit. Drug screen orders expire, often within days, so go right away. Have ready: a passport, or a driver's license plus your Social Security card or birth certificate (for the I-9), a voided check for direct deposit, and your DD-214 Member 4 copy.</div></li>
+        <li><div><b>Show up and own it.</b>Turn in your timecard on time every week. Late timecards mean late pay. Around month 3 or 4, ask your recruiter, not just your manager, what the plan is for extension or conversion.</div></li>
+      </ol>
+      <div class="note red"><b>Best method for success</b>Apply to the posting, then call the recruiter that same day and tell them you want that contract. An application sitting in a system is easy to miss. A veteran on the phone saying "I'm ready, here's my resume, I can interview tomorrow" is not.</div>
+    </div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">$</span><span class="t">Negotiating your rate<small>Most people leave money on the table here</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body"><ul class="clean">
+      <li><b>Ask for the range before you give a number.</b> "What's the pay range on this req?" Every agency has a spread between the floor and the max the client's bill rate allows.</li>
+      <li><b>Then ask near the top of it.</b> Asking for $2 to $4 an hour more than the first number is normal and expected. Recruiters rarely pull an offer over that.</li>
+      <li><b>Never name a number first if you can help it.</b> If pushed, give a range with your real target at the bottom.</li>
+      <li><b>Get the overtime rate in writing.</b> Non-exempt contract roles pay time and a half. Ask whether OT is approved on this job.</li>
+      <li><b>Ask when you're paid.</b> Weekly is common and helps you between paychecks. Ask about first-check timing, which can be two to three weeks out.</li>
+      <li><b>Don't invent other offers.</b> Recruiters talk to each other and to the client. A real competing rate is leverage. A fake one ends the conversation.</li>
+    </ul></div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">&#8635;</span><span class="t">Follow-up rhythm<small>Persistent, not pushy</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body"><ul class="clean">
+      <li><b>Same day:</b> apply, call, email the resume.</li>
+      <li><b>3 business days later:</b> one short email or call. "Checking whether I was submitted and if the client needs anything else from me."</li>
+      <li><b>Weekly after that</b> until you hear yes or no. One touch a week. Not daily.</li>
+      <li><b>Every call ends with:</b> "What else do you have that isn't posted?"</li>
+      <li><b>After a no:</b> thank them and ask to be kept in mind. That recruiter is now a contact, not a dead end.</li>
+      <li><b>Answer unknown numbers</b> during your search. Set a short, professional voicemail greeting with your name.</li>
+    </ul></div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">3</span><span class="t">The phone script<small>Under a minute. Say it, don't read it.</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <div class="script">
+        <p>"Hi, this is [your name]. I just applied for the [job title] contract you posted, req number [#] if you have it.</p>
+        <p>I'm a [branch] veteran with [X] years in [your field], and I'm available to start [date]. I've got my resume ready to send right now.</p>
+        <p>Who's the best person to talk to about getting submitted?"</p>
+      </div>
+      <p class="small muted">Then send the resume while you're still on the phone, or the minute you hang up.</p>
+    </div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">4</span><span class="t">Ask before you sign<small>Twelve questions. Get the answers in an email.</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <p class="small muted">A good recruiter answers all of these without blinking. Check them off as you get answers.</p>
+      <div class="qs" id="qs">
+        <label><input type="checkbox" id="q1" data-k="q1"><span>Is this W-2 through you?</span></label>
+        <label><input type="checkbox" id="q2" data-k="q2"><span>What's the hourly pay rate and the overtime rate?</span></label>
+        <label><input type="checkbox" id="q3" data-k="q3"><span>How long is the contract, and is it contract-to-hire?</span></label>
+        <label><input type="checkbox" id="q4" data-k="q4"><span>Who is the client, and where will I work?</span></label>
+        <label><input type="checkbox" id="q5" data-k="q5"><span>What's the schedule? Any flexibility?</span></label>
+        <label><input type="checkbox" id="q6" data-k="q6"><span>Do you offer medical, dental or 401(k) to contractors?</span></label>
+        <label><input type="checkbox" id="q7" data-k="q7"><span>Are any holidays or sick days paid?</span></label>
+        <label><input type="checkbox" id="q8" data-k="q8"><span>How much notice do I need to give if I leave?</span></label>
+        <label><input type="checkbox" id="q9" data-k="q9"><span>How do timecards work, and when is payday?</span></label>
+        <label><input type="checkbox" id="q10" data-k="q10"><span>Is there a no-hire or non-compete clause?</span></label>
+        <label><input type="checkbox" id="q11" data-k="q11"><span>What's the pay range for this req?</span></label>
+        <label><input type="checkbox" id="q12" data-k="q12"><span>Has anyone submitted me to this client in the last 12 months?</span></label>
+      </div>
+    </div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">5</span><span class="t">Your first 30 days<small>A battle rhythm. Check items off as you go.</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body">
+      <div><div class="eyebrow">Week 1 · Set up</div><div class="week">
+        <label><input type="checkbox" id="w1a" data-k="w1a"><span>Update your resume. Word and PDF, two pages max.</span></label>
+        <label><input type="checkbox" id="w1b" data-k="w1b"><span>Turn on LinkedIn "Open to Work" (recruiters only).</span></label>
+        <label><input type="checkbox" id="w1c" data-k="w1c"><span>Make accounts on 3 to 5 agency job boards.</span></label>
+        <label><input type="checkbox" id="w1d" data-k="w1d"><span>Sign up with Hire Heroes USA for a free coach.</span></label>
+        <label><input type="checkbox" id="w1e" data-k="w1e"><span>Ask your coach for the free LinkedIn Premium year.</span></label></div></div>
+      <div><div class="eyebrow">Week 2 · Hit the boards</div><div class="week">
+        <label><input type="checkbox" id="w2a" data-k="w2a"><span>Apply to 5 contract postings a day and call on each one.</span></label>
+        <label><input type="checkbox" id="w2b" data-k="w2b"><span>Log every application in the Tracker tab.</span></label>
+        <label><input type="checkbox" id="w2c" data-k="w2c"><span>Request an ACP or Vets2Industry mentor in your target field.</span></label></div></div>
+      <div><div class="eyebrow">Week 3 · Work the network</div><div class="week">
+        <label><input type="checkbox" id="w3a" data-k="w3a"><span>Message 10 recruiters on LinkedIn who place your job title.</span></label>
+        <label><input type="checkbox" id="w3b" data-k="w3b"><span>Find your local veteran employment rep at an American Job Center.</span></label>
+        <label><input type="checkbox" id="w3c" data-k="w3c"><span>Ask every recruiter: "What else do you have that isn't posted?"</span></label></div></div>
+      <div><div class="eyebrow">Week 4 · Close</div><div class="week">
+        <label><input type="checkbox" id="w4a" data-k="w4a"><span>Follow up on every open submission.</span></label>
+        <label><input type="checkbox" id="w4b" data-k="w4b"><span>Line up references (two work, one personal) with phone numbers.</span></label>
+        <label><input type="checkbox" id="w4c" data-k="w4c"><span>Before signing, run the agreement through the twelve questions above.</span></label></div></div>
+    </div>
+  </details>
+</section>
+
+<!-- ============ AGENCIES ============ -->
+<section class="panel" id="p-ag" role="tabpanel" hidden>
+  <div><div class="eyebrow">Section 3</div><h2>Agency Directory</h2><p class="muted">Established staffing firms that place veterans in contract roles. Every link was checked when this guide was built. Tap a card to open it.</p></div>
+  <div class="toolbar">
+    <input class="search" id="agq" type="search" placeholder="Search agencies, fields, cities…" aria-label="Search agencies">
+    <div class="chips" id="agchips" role="group" aria-label="Filter by field">
+      <button class="chip" type="button" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" type="button" aria-pressed="false" data-f="eng">Engineering &amp; aerospace</button>
+      <button class="chip" type="button" aria-pressed="false" data-f="ind">Industrial &amp; logistics</button>
+      <button class="chip" type="button" aria-pressed="false" data-f="off">Office &amp; finance</button>
+      <button class="chip" type="button" aria-pressed="false" data-f="it">IT</button>
+      <button class="chip" type="button" aria-pressed="false" data-f="vet">Veteran programs</button>
+    </div>
+  </div>
+  <div id="aglist" class="panel"></div>
+  <div class="note"><b>Working more than one agency</b>
+    <ul class="clean small">
+      <li><b>Work three to five at the same time.</b> Each has different clients. More agencies, more doors.</li>
+      <li><b>One agency per job.</b> If two recruiters pitch the same role, go with the one who called first and tell the other you're already submitted.</li>
+      <li><b>Keep a short list of recruiters who deliver.</b> After a few weeks you'll know who calls back.</li>
+      <li><b>Tell them you're a veteran.</b> Several of these firms track veteran hires and some have military recruiting teams.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ WARNINGS ============ -->
+<section class="panel" id="p-warn" role="tabpanel" hidden>
+  <div><div class="eyebrow">Section 4</div><h2>Warnings</h2><p class="muted">Fake recruiters are the reason real ones get ignored. Scammers want one of three things: your personal data, your money, or your bank account. Real agencies never need any of those before a written offer.</p></div>
+
+  <details class="dd" open>
+    <summary><span class="n r">!</span><span class="t">Red flags: walk away<small>Any one of these is enough</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body"><ul class="clean x">
+      <li>Gmail, Outlook or Yahoo address for a "national agency"</li>
+      <li>Interview only by text, Telegram, WhatsApp or Signal</li>
+      <li>Asks for your SSN, bank info or a copy of your ID before an offer</li>
+      <li>Sends you a check to buy equipment, then asks you to send some back</li>
+      <li>Part-time pay that's way too high for the job</li>
+      <li>Wants you to email your info to an address off the job site</li>
+      <li>Pressures you to decide in minutes or pay any kind of fee</li>
+      <li>A job offer with no interview at all</li>
+      <li>Asks you to pay for training, a certification or equipment to start</li>
+    </ul></div>
+  </details>
+
+  <details class="dd" open>
+    <summary><span class="n g">✓</span><span class="t">Green flags: likely real<small>What a legit recruiter looks like</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body"><ul class="clean check">
+      <li>Email comes from the agency's own domain</li>
+      <li>Recruiter has a real LinkedIn profile at that agency, with connections and history</li>
+      <li>The job names a real client or gives a real location and req number</li>
+      <li>They want a phone or video call before anything else</li>
+      <li>Background check and drug screen come after a written offer, through a known vendor like Quest</li>
+      <li>Pay is W-2 through a company you can look up and call</li>
+    </ul></div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n">60</span><span class="t">The 60-second check<small>Do this before you reply to anyone</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body"><ol class="ol">
+      <li>Search the recruiter's name plus the agency on LinkedIn.</li>
+      <li>Go to the agency's website yourself (don't click their link) and find the job on their board.</li>
+      <li>Call the agency's main number from their website and ask if the recruiter works there.</li>
+      <li>Still not sure? Paste the message into an AI tool and ask if it looks like a scam.</li>
+    </ol></div>
+  </details>
+
+  <details class="dd">
+    <summary><span class="n w">§</span><span class="t">Contract traps<small>Read before you sign</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="body"><ul class="clean">
+      <li><b>Two RTRs on one job.</b> The client can throw out both submissions. One agency per job.</li>
+      <li><b>Notice to quit.</b> Most agreements require notice. Leaving without it can cost you unemployment eligibility or rehire status, and some carry a fee.</li>
+      <li><b>No-hire and non-solicit clauses.</b> Common. They can block you from being hired by the client directly for up to a year. Ask how long.</li>
+      <li><b>Timecard deadlines.</b> Miss the cutoff and your pay is held to the next cycle. Find out the day and time.</li>
+      <li><b>"Subject to change or cancellation."</b> Start dates can slip. Don't quit another job until you have a confirmed start.</li>
+      <li><b>Rate in the RTR must match the offer.</b> If the right-to-represent form says one number and the offer letter says another, stop and get it fixed before you sign.</li>
+      <li><b>Inventions and work product.</b> Anything you build on the job belongs to the client. Matters if you run a side business.</li>
+    </ul>
+    <p class="small muted">Not legal advice. Paste the agreement into an AI tool and ask it to list every obligation on you, then read those lines yourself.</p></div>
+  </details>
+</section>
+
+<!-- ============ RESOURCES / GEMS ============ -->
+<section class="panel" id="p-gems" role="tabpanel" hidden>
+  <div><div class="eyebrow">Section 5</div><h2>Hidden Gems</h2><p class="muted">Most good jobs get filled before the public sees them. People who are known get hired first. This section is about getting known. No clearance jobs, no USAJobs.</p></div>
+  <div id="gemlist" class="panel"></div>
+</section>
+
+<!-- ============ TRACKER ============ -->
+<section class="panel" id="p-track" role="tabpanel" hidden>
+  <div><div class="eyebrow">Section 6</div><h2>Application Tracker</h2><p class="muted">If it isn't written down, you'll lose track by week two. Saved on this phone only.</p></div>
+  <div class="card"><div class="body">
+    <form id="tform" class="form" autocomplete="off">
+      <label class="full">Agency / recruiter<input id="t-ag" required placeholder="Aerotek, Sam R."></label>
+      <label class="full">Role / req #<input id="t-role" required placeholder="Buyer, req 21955"></label>
+      <label>Pay rate<input id="t-pay" placeholder="$32/hr"></label>
+      <label>Follow-up date<input id="t-fu" type="date"></label>
+      <label>RTR signed?<select id="t-rtr"><option>No</option><option>Yes</option></select></label>
+      <label>Status<select id="t-st"><option value="w">Applied</option><option value="o">Submitted</option><option value="i">Interview</option><option value="f">Offer</option><option value="d">Closed</option></select></label>
+      <div class="full btns"><button class="btn p" type="submit">Add application</button><button class="btn" type="button" id="t-copy">Copy list as text</button></div>
+    </form>
+  </div></div>
+  <div id="apps" class="apps"></div>
+  <p class="small muted" id="apps-empty">Nothing logged yet. Add your first application above.</p>
+</section>
+
+</main>
+
+<nav class="tabs" role="tablist" aria-label="Sections">
+  <div class="in">
+    <button class="tab" role="tab" aria-selected="true" data-p="start" aria-controls="p-start"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Start</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="play" aria-controls="p-play"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>Playbook</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="ag" aria-controls="p-ag"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg>Agencies</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="warn" aria-controls="p-warn"><svg viewBox="0 0 24 24"><path d="M12 3l10 18H2zM12 10v4M12 18h.01"/></svg>Warnings</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="gems" aria-controls="p-gems"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9zM2 9h20M9 3l3 6 3-6M9 9l3 12 3-12"/></svg>Gems</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="track" aria-controls="p-track"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>Tracker</button>
+  </div>
+</nav>
+
+<script>
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+let toastT;function toast(msg){let t=$(".toast");if(!t){t=document.createElement("div");t.className="toast";document.body.appendChild(t)}t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{t.hidden=true},1800)}
+function copyText(txt,done){const ok=()=>{toast(done||"Copied")};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok).catch(()=>fallback())}else fallback();function fallback(){const ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok()}catch(e){toast("Press and hold to copy")}document.body.removeChild(ta)}}
+
+/* ---------- tabs ---------- */
+const PANELS={start:"p-start",play:"p-play",ag:"p-ag",warn:"p-warn",gems:"p-gems",track:"p-track"};
+function show(key,push){if(!PANELS[key])key="start";for(const k in PANELS){$("#"+PANELS[k]).hidden=k!==key}$$(".tab").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.p===key)));if(push){try{history.replaceState(null,"","#"+key)}catch(e){}}window.scrollTo({top:0});store.set("tab",key)}
+$$(".tab").forEach(b=>b.addEventListener("click",()=>show(b.dataset.p,true)));
+window.addEventListener("hashchange",()=>show(location.hash.slice(1)||"start",false));
+const initial=(location.hash||"").slice(1);
+if(initial==="install"){show("start",false);const d=$("#install");d.open=true;setTimeout(()=>d.scrollIntoView({block:"start"}),50)}else show(PANELS[initial]?initial:(store.get("tab","start")),false);
+
+/* ---------- checkboxes persist ---------- */
+const checks=store.get("checks",{});
+$$("input[type=checkbox][data-k]").forEach(c=>{c.checked=!!checks[c.dataset.k];c.addEventListener("change",()=>{checks[c.dataset.k]=c.checked;store.set("checks",checks)})});
+
+/* ---------- agencies ---------- */
+const A=[
+ {n:"Aerotek",tag:"Veteran-friendly · branch network",f:["ind","eng","vet"],best:"Manufacturing, warehouse, logistics, aviation, construction, maintenance",board:["jobs.aerotek.com","https://jobs.aerotek.com/us/en"],phone:"1-888-237-6835",phoneNote:"(1-888-AEROTEK) routes to your nearest office",branch:["Office locator","https://www.aerotek.com/en/locations"],vet:["Military & veteran resources","https://www.aerotek.com/en/about-us/military-and-veteran-resources"],vetNote:"200+ offices near major bases, free resume and interview coaching",how:"Aerotek runs on local branches. Apply online, then call or walk into the closest office with your resume in hand."},
+ {n:"Actalent",tag:"Engineering & sciences",f:["eng"],best:"Engineering and sciences: aerospace, defense, manufacturing, utilities",board:["careers.actalentservices.com","https://careers.actalentservices.com/us/en"],branch:["Office locator","https://www.actalentservices.com/en/locations/north-america-recruitment"],how:"Same parent company as Aerotek and TEKsystems. Apply, then call the local office on the locator."},
+ {n:"Belcan",tag:"Aerospace & engineering",f:["eng"],best:"Aerospace, defense, space, automotive, industrial engineering",board:["Easy Hire resume form","https://www.belcan.com/easy-hire/"],boardNote:"No public job board in North America",how:"Submit through Easy Hire. Belcan says a recruiter reaches out within 5 business days. Their jobs also show up on Dice and Monster. If a Belcan recruiter pitches a job another agency already submitted you for, say no. One RTR per job."},
+ {n:"Donatech Corporation",tag:"Engineering & skilled trades",f:["eng","ind"],best:"Engineering, aerospace, skilled trades, procurement, IT",board:["donatech.com/jobs","https://www.donatech.com/jobs"],phone:"(319) 377-2300",phoneNote:"then press 7 for recruiting",email:"recruiting@donatech.com",email2:"jobs@donatech.com",perks:"Hires on a W-2 basis. Medical, dental, 401(k) and long-term disability.",how:"Good source for live contract openings. Apply on the board, then email your resume to jobs@donatech.com with the job title, your pay rate and your city. Call the main line, press 7, and ask who owns that req."},
+ {n:"Insight Global",tag:"Clear contractor benefits",f:["it","eng","off"],best:"IT, engineering, finance, admin, general staffing",board:["insightglobal.com/jobs","https://insightglobal.com/jobs/"],phone:"855-485-8853",perks:"W-2 consultants. Benefits start on day 31 of an assignment; 401(k) from day 89.",vet:["Veterans page","https://careers.insightglobal.com/veterans/"],how:"Apply, then call and ask which office covers your city."},
+ {n:"Kforce",tag:"Tech & finance",f:["it","off"],best:"Technology, finance and accounting",board:["kforce.com job search","https://www.kforce.com/find-work/search-jobs/"],phone:"1-877-453-6723",phoneNote:"(1-877-4KFORCE)",branch:["Office list","https://www.kforce.com/find-an-office/all-locations/"],how:"Apply, then call your nearest office or use the contact form's \"applying for a position\" option."},
+ {n:"Korn Ferry Interim",tag:"Interim & professional",f:["off"],best:"Professional and senior interim, contract and contract-to-hire roles",board:["interimjobs.kornferry.com","https://interimjobs.kornferry.com/"],join:["Submit your resume","https://interimjobs.kornferry.com/candidates/submit-your-resume"],contact:["Contact form","https://www.kornferry.com/contact"],contactNote:"No public phone line for candidates",perks:"Korn Ferry runs payroll for its interim talent. Many postings say W-2.",how:"Submit your resume to the Interim Network, then connect on LinkedIn with Korn Ferry recruiters who list your field. Keep your LinkedIn headline sharp. That's how they find people."},
+ {n:"Michael Page",tag:"Office & professional",f:["off"],best:"Finance, accounting, admin, HR, legal, IT, supply chain",board:["michaelpage.com/jobs/contract","https://www.michaelpage.com/jobs/contract"],contact:["US office list","https://www.michaelpage.com/contact-us"],contactNote:"Boston, Chicago, Houston, LA, New York, Philadelphia",perks:"Temps are paid through Michael Page payroll, hourly with overtime. No PTO.",how:"Their own site says temp jobs move fast and only some get posted. Upload your resume and get on a call with a recruiter. Don't just watch the board."},
+ {n:"Orion Talent",tag:"Built for veterans",f:["vet","ind","eng"],best:"Technicians, maintainers, field service, NCOs and officers",board:["oriontalent.com/job-search","https://www.oriontalent.com/job-search/"],vet:["Military & veterans page","https://www.oriontalent.com/job-search/military-veterans/"],contact:["Contact form & live chat","https://www.oriontalent.com/contact/"],how:"Mostly direct hire, not contract, but the whole firm exists to place veterans. Build a profile, join their talent community, and ask about their veteran hiring conferences."},
+ {n:"Randstad USA",tag:"Branch network",f:["ind","off","it"],best:"Industrial, office and admin, tech, engineering",board:["randstadusa.com/jobs","https://www.randstadusa.com/jobs/"],branch:["Branch locator","https://www.randstadusa.com/local/"],perks:"W-2 with weekly pay and access to health and 401(k) options.",how:"Filter by Temporary, Temp to Perm or Contract. Then call or walk into your local branch."},
+ {n:"Robert Half",tag:"Huge contract board",f:["off","it","ind"],best:"Accounting, finance, admin, customer service, IT, some logistics",board:["roberthalf.com/us/en/jobs","https://www.roberthalf.com/us/en/jobs"],phone:"855-432-0924",branch:["Office locator","https://www.roberthalf.com/us/en/locations"],perks:"Contract talent can join the Robert Half 401(k).",vet:["Veterans careers page","https://www.roberthalf.com/us/en/about/corporate-responsibility/veterans-careers"],how:"Filter for \"Temporary / Contract\" or \"Temporary to Hire.\" Many postings list the recruiter's direct number. Apply, then call that person the same day."},
+ {n:"TEKsystems",tag:"IT",f:["it","vet"],best:"IT: help desk, networking, software, cyber, data",board:["careers.teksystems.com","https://careers.teksystems.com/us/en"],branch:["Office locator","https://www.teksystems.com/en/locations"],vet:["Veterans & military page","https://www.teksystems.com/en/careers/veterans-military"],vetNote:"25,000+ military-connected people placed since 2013",how:"Talk to a recruiter early. If you picked up IT certs in the service, lead with them."}
+];
+const FL={all:"All",eng:"Engineering & aerospace",ind:"Industrial & logistics",off:"Office & finance",it:"IT",vet:"Veteran programs"};
+let filt="all", q="";
+function lk(a){return `<a href="${a[1]}" target="_blank" rel="noopener">${esc(a[0])}</a>`}
+function agCard(a){
+  const rows=[];
+  rows.push(`<dt>Best for</dt><dd>${esc(a.best)}</dd>`);
+  rows.push(`<dt>Job board</dt><dd>${lk(a.board)}${a.boardNote?` <span class="muted small">(${esc(a.boardNote)})</span>`:""}</dd>`);
+  if(a.join)rows.push(`<dt>Join</dt><dd>${lk(a.join)}</dd>`);
+  if(a.phone)rows.push(`<dt>Phone</dt><dd><span class="ph">${esc(a.phone)}</span><button class="copy" type="button" data-copy="${esc(a.phone)}">Copy</button>${a.phoneNote?`<div class="muted small">${esc(a.phoneNote)}</div>`:""}</dd>`);
+  if(a.email)rows.push(`<dt>Email</dt><dd>${esc(a.email)}<button class="copy" type="button" data-copy="${esc(a.email)}">Copy</button>${a.email2?`<div>resumes: ${esc(a.email2)}<button class="copy" type="button" data-copy="${esc(a.email2)}">Copy</button></div>`:""}</dd>`);
+  if(a.branch)rows.push(`<dt>Find a branch</dt><dd>${lk(a.branch)}</dd>`);
+  if(a.contact)rows.push(`<dt>Contact</dt><dd>${lk(a.contact)}${a.contactNote?` <span class="muted small">(${esc(a.contactNote)})</span>`:""}</dd>`);
+  if(a.perks)rows.push(`<dt>Pay &amp; perks</dt><dd>${esc(a.perks)}</dd>`);
+  if(a.vet)rows.push(`<dt>Veterans</dt><dd>${lk(a.vet)}${a.vetNote?` <span class="muted small">(${esc(a.vetNote)})</span>`:""}</dd>`);
+  return `<details class="ag" data-f="${a.f.join(" ")}"><summary><span class="nm">${esc(a.n)}<small>${esc(a.tag)}</small></span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+  <div class="body"><dl class="kv">${rows.join("")}</dl><div class="how"><b>How to work it:</b> ${esc(a.how)}</div>
+  <div class="btns"><a class="btn p" href="${a.board[1]}" target="_blank" rel="noopener">Open job board ↗</a></div></div></details>`;
+}
+function renderAg(){
+  const list=$("#aglist");const ql=q.trim().toLowerCase();
+  const items=A.filter(a=>(filt==="all"||a.f.includes(filt))&&(!ql||[a.n,a.tag,a.best,a.how,a.perks||"",a.contactNote||"",a.phoneNote||""].join(" ").toLowerCase().includes(ql)));
+  list.innerHTML=items.length?items.map(agCard).join(""):`<div class="empty">No agencies match. Try another word or clear the filter.</div>`;
+}
+$("#agq").addEventListener("input",e=>{q=e.target.value;renderAg()});
+$$("#agchips .chip").forEach(c=>c.addEventListener("click",()=>{filt=c.dataset.f;$$("#agchips .chip").forEach(x=>x.setAttribute("aria-pressed",String(x===c)));renderAg()}));
+document.addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if(b){copyText(b.dataset.copy)}});
+renderAg();
+
+/* ---------- gems ---------- */
+const G=[
+ {t:"Why some jobs only exist through agencies",k:"1",intro:"Big companies often run all contract hiring through a managed service provider (MSP) and a vendor management system (VMS). The job order goes out to a short list of approved agencies, and only those agencies can submit people. If you apply on the company's own careers page, you can't even see that seat. Getting in with the right agency is the only way through that door.",items:[
+  {n:"Ask every recruiter one question",x:"\"What else do you have at this client that isn't posted yet?\" Recruiters often hold reqs they haven't written up."},
+  {n:"Ask who the client's other agencies are",x:"Once you're on a contract, your coworkers came in through other agencies. Ask them who. That's your next list of recruiters to call."},
+  {n:"Get known by the hiring manager",x:"Contract-to-hire seats get decided by the people you work with every day. Do the job well and say plainly that you want to stay."},
+  {n:"Read how it works",l:["MSP vs. VMS explained","https://www.tcwglobal.com/blog/managed-service-provider-vs.-vendor-management-system-whats-the-difference"],x:"A plain-English explainer on how job orders get routed only to approved staffing agencies."}]},
+ {t:"LinkedIn moves that actually work",k:"in",items:[
+  {n:"Headline = the job you want",x:"\"Procurement Specialist | Supply Chain | USMC Veteran\" beats \"Transitioning Marine.\" Recruiters search by job title. Not sure what your MOS is called in civilian terms? The CareerOneStop tool under Local help translates it."},
+  {n:"Open to Work, recruiters only",x:"Turn it on and set it so only recruiters see it. List the exact titles you'd take and check \"contract\" and \"temporary.\""},
+  {n:"Search posts, not just jobs",x:"Search the Posts tab for \"hiring\" plus your title plus \"contract.\" Agency recruiters post openings there before (or instead of) the job board."},
+  {n:"Follow agency recruiters",x:"Find recruiters at the agencies in this guide who place your job title. Connect with a short note: veteran, your title, your city, available now."},
+  {n:"Free LinkedIn Premium",l:["LinkedIn for veterans","https://socialimpact.linkedin.com/programs/veterans"],x:"One free year of Premium for veterans and spouses. You now get it through a partner nonprofit such as Hire Heroes USA while you're in their career program. Codes are first come, first served."},
+  {n:"ACP Connects",x:"The LinkedIn group run by American Corporate Partners. Open to veterans who don't qualify for ACP's one-on-one mentoring."}]},
+ {t:"Free coaching and mentors",k:"$0",intro:"These are nonprofits, and most are completely free. They know people inside companies that are hiring.",items:[
+  {n:"Hire Heroes USA",l:["hireheroesusa.org","https://www.hireheroesusa.org/"],x:"100% free one-on-one career coach, resume rewrite and job search plan. Any era, any branch, plus spouses. They cap new clients each week, so register early with your DD-214 handy."},
+  {n:"American Corporate Partners (ACP)",l:["acp-usa.org","https://www.acp-usa.org/"],x:"A free one-year mentorship with someone working at a major company, hand-matched by ACP staff. For post-9/11 veterans with 180+ days of active duty. Ask to be matched in your target industry."},
+  {n:"FourBlock",l:["fourblock.org","https://www.fourblock.org/"],x:"A free 10-week career readiness program, in person in nine cities or virtual. Cohorts start spring and fall. Companies host the classes, so you meet their people."},
+  {n:"Onward to Opportunity",l:["Syracuse IVMF","https://ivmf.syracuse.edu/programs/career-training/"],x:"Free industry certification training (project management, IT, HR and more) plus coaching. Exam fees covered if you're unemployed. Fastest way to add a civilian cert."},
+  {n:"Vets2Industry",x:"Search \"Vets2Industry\" to find them. Free mentor matching, a career board and virtual events. Open to veterans, spouses and family members."},
+  {n:"COMMIT Foundation",l:["commitfoundation.org","https://www.commitfoundation.org/"],x:"Transition coaching, resume and interview prep, salary negotiation and referrals. Best fit for mid-career and senior leaders."}]},
+ {t:"Local help most veterans never use",k:"AJC",items:[
+  {n:"Veteran reps at American Job Centers",l:["Find your center","https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx"],x:"About 2,400 centers nationwide, and many have veteran employment staff paid to help you one-on-one. Walk in and ask for the veteran representative. They know which local employers are hiring and who wants veterans."},
+  {n:"CareerOneStop Veterans Center",l:["careeronestop.org/Veterans","https://www.careeronestop.org/Veterans/default.aspx"],x:"Type in your MOS and it matches you to civilian job titles. Use those titles in your resume headline and your searches. Hotline: 1-877-US2-JOBS."},
+  {n:"VA Veteran Readiness & Employment (Ch. 31)",l:["va.gov VR&E","https://www.va.gov/careers-employment/vocational-rehabilitation/"],x:"If you have a VA rating of 10% or more, VR&E can help you get hired, retrained or set up in your own business. Ask for the Rapid Access to Employment track if you just need a job fast."},
+  {n:"RecruitMilitary job fairs",l:["recruitmilitary.com","https://recruitmilitary.com/"],x:"Over 100 veteran hiring events a year, in person and virtual. Companies come to these specifically to hire veterans. Bring printed resumes."},
+  {n:"Hiring Our Heroes events",l:["hiringourheroes.org","https://www.hiringourheroes.org/"],x:"Hiring events and a career connector open to veterans and spouses. Their corporate fellowship is active duty only, so separated veterans should go straight to the events."}]},
+ {t:"Companies with their own veteran pipelines",k:"★",intro:"No clearance needed for any of these. They run military hiring teams and pages that translate your MOS into their jobs.",items:[
+  {n:"Amazon",l:["Military careers","https://www.amazon.jobs/content/en/career-programs/military"],x:"Operations and leadership roles, a military mentoring program and a veteran employee network."},
+  {n:"The Home Depot",l:["Military careers","https://careers.homedepot.com/career-areas/military/"],x:"Search jobs by your MOS across stores, distribution centers and corporate."},
+  {n:"Walmart",l:["Military careers","https://careers.walmart.com/us/en/home/careers-areas/Military"],x:"Military skills translator, talent network and hiring events."},
+  {n:"UPS",l:["Veterans careers","https://www.jobs-ups.com/us/en/veterans"],x:"Veterans talent community with job alerts, workshops and events."},
+  {n:"Veteran Jobs Mission",l:["veteranjobsmission.com","https://www.veteranjobsmission.com/"],x:"A coalition of 315+ companies that have committed to hiring veterans. Use the member list as your target company list, then find which agencies staff those companies."}]}
+];
+$("#gemlist").innerHTML=G.map((g,i)=>`<details class="dd"${i===0?" open":""}><summary><span class="n${i===0?" r":""}">${esc(g.k)}</span><span class="t">${esc(g.t)}</span><svg class="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary><div class="body">${g.intro?`<p class="small">${esc(g.intro)}</p>`:""}<div>${g.items.map(it=>`<div class="gem"><b>${esc(it.n)}${it.l?` <span class="lk">· ${lk(it.l)}</span>`:""}</b><span class="small">${esc(it.x)}</span></div>`).join("")}</div></div></details>`).join("");
+
+/* ---------- tracker ---------- */
+let apps=store.get("apps",[]);
+const STN={w:"Applied",o:"Submitted",i:"Interview",f:"Offer",d:"Closed"};
+function renderApps(){const el=$("#apps");$("#apps-empty").hidden=apps.length>0;el.innerHTML=apps.map((a,i)=>`<div class="app"><div class="t">${esc(a.role)}</div><span class="st ${a.st}">${esc(a.stLabel||STN[a.st])}</span><div class="m">${esc(a.ag)}${a.pay?` · ${esc(a.pay)}`:""} · RTR ${esc(a.rtr)}${a.fu?` · follow up ${esc(a.fu)}`:""} · added ${esc(a.d)}</div><button class="del" type="button" data-del="${i}">Remove</button></div>`).join("")}
+$("#tform").addEventListener("submit",e=>{e.preventDefault();const sel=$("#t-st");apps.unshift({ag:$("#t-ag").value.trim(),role:$("#t-role").value.trim(),pay:$("#t-pay").value.trim(),fu:$("#t-fu").value,rtr:$("#t-rtr").value,st:sel.value,stLabel:sel.options[sel.selectedIndex].text,d:new Date().toLocaleDateString()});store.set("apps",apps);e.target.reset();renderApps();toast("Added")});
+$("#apps").addEventListener("click",e=>{const b=e.target.closest("[data-del]");if(!b)return;apps.splice(+b.dataset.del,1);store.set("apps",apps);renderApps()});
+$("#t-copy").addEventListener("click",()=>{if(!apps.length){toast("Nothing to copy yet");return}copyText(apps.map(a=>`${a.d} | ${a.ag} | ${a.role} | ${a.pay||"-"} | RTR ${a.rtr} | follow up ${a.fu||"-"} | ${a.stLabel||STN[a.st]}`).join("\n"),"List copied")});
+renderApps();
+})();
+</script>
+
+</body>
+</html>
